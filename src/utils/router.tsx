@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import {
   ArticlesList,
   HomePAGE,
@@ -18,14 +18,14 @@ const publicRoutes = [
   { path: "/singup", element: <SingupPage /> },
 ];
 
-const privateRoutes = [
-  // { path: "/dashboard", element: <Dashboard /> },
-];
+// const privateRoutes = [
+//   // { path: "/dashboard", element: <Dashboard /> },
+// ];
 
-const PrivateRoute = ({ children }: { children: React.ReactNode }) => {
-  const isAuthenticated = !!localStorage.getItem("token");
-  return isAuthenticated ? <>{children}</> : <Navigate to="/login" replace />;
-};
+// const PrivateRoute = ({ children }: { children: React.ReactNode }) => {
+//   const isAuthenticated = !!localStorage.getItem("token");
+//   return isAuthenticated ? <>{children}</> : <Navigate to="/login" replace />;
+// };
 
 const Router: React.FC = () => {
   return (

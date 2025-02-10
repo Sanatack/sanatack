@@ -22,7 +22,7 @@ import {
 
 const ArticlesGrid: React.FC = () => {
   const [articles, setArticles] = useState<any[]>([]);
-  const [filter, setFilter] = useState<string>("");
+  const [filter] = useState<string>("");
   const [activeCategory, setActiveCategory] = useState<string>("View All");
   const [currentPage, setCurrentPage] = useState<number>(1);
   const articlesPerPage = 6;

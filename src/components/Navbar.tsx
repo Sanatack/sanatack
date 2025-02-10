@@ -1,17 +1,15 @@
 import { useEffect, useState } from "react";
 import { navItems } from "@/utils/navList";
 import { Button } from "./ui/button";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import LogoLight from "../assets/logo.svg";
-import { CircleArrowLeft, MoonIcon, SunIcon, Globe } from "lucide-react";
 
 const Navbar = () => {
-  const navigate = useNavigate();
   const [menuOpen, setMenuOpen] = useState(false);
-  const [isDarkMode, setIsDarkMode] = useState(() => {
+  const [isDarkMode] = useState(() => {
     return localStorage.getItem("theme") === "dark";
   });
-  const [language, setLanguage] = useState(() => {
+  const [language] = useState(() => {
     return localStorage.getItem("language") || "en";
   });
 
@@ -30,13 +28,7 @@ const Navbar = () => {
     localStorage.setItem("language", language);
   }, [language]);
 
-  const toggleDarkMode = () => {
-    setIsDarkMode(!isDarkMode);
-  };
 
-  const toggleLanguage = () => {
-    setLanguage((prevLanguage) => (prevLanguage === "en" ? "ar" : "en"));
-  };
 
   return (
     <nav className="bg-transparent px-6 lg:px-0">

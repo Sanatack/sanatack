@@ -1,5 +1,3 @@
-import React from 'react';
-
 const Partners = () => {
   const partners = ['Brave', 'Circle', 'Discord', 'Google', 'Jump', 'Lollapalooza', 'Magic Eden'];
 

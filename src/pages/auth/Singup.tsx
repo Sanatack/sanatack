@@ -1,7 +1,6 @@
 import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import Preference from "./Preference";
-import VerifyOTP from "./Verify";
 
 const Signup = () => {
   const designRef = useRef(null);
@@ -30,15 +29,15 @@ const Signup = () => {
     return true;
   };
 
-  const validateOTP = () => {
-    // send api
-    return true;
-  };
+  // const validateOTP = () => {
+  //   // send api
+  //   return true;
+  // };
 
   const components = [
     { component: <SignupForm />, validator: validateSignupForm },
     { component: <Preference />, validator: validatePreference },
-    { component: <VerifyOTP />, validator: validateOTP },
+    // { component: <VerifyOTP />, validator: validateOTP },
   ];
 
   const handleNext = () => {
@@ -57,7 +56,7 @@ const Signup = () => {
         ref={formRef}
         className="flex items-center justify-center bg-[#0C0C0C] h-full"
       >
-        <WhatPageTracker total={components.length} curr={next} />
+        {/* <WhatPageTracker total={components.length} curr={next} /> */}
         <div className="w-full max-w-md pt-3 rounded-md shadow-md">
           {components[next]?.component}
           {error && <p className="text-red-500 text-center mt-2">{error}</p>}
@@ -175,12 +174,12 @@ const SignupForm = () => {
   );
 };
 
-const WhatPageTracker = (total: number, curr: any) => {
-  return (
-    <>
-      {
-        // Array.from({ length: total }).map((_, index) => ()}
-      }
-    </>
-  );
-};
+// const WhatPageTracker = (total: number, curr: any) => {
+//   return (
+//     <>
+//       {
+//         // Array.from({ length: total }).map((_, index) => ()}
+//       }
+//     </>
+//   );
+// };

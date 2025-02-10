@@ -1,5 +1,3 @@
-import React from 'react';
-
 const Courses = () => {
   const courses = [
     { title: 'تصميم النظام', subtitle: 'System Design' },
