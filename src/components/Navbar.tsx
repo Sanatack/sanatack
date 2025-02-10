@@ -6,20 +6,29 @@ import LogoLight from "../assets/logo.svg";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [isDarkMode] = useState(() => {
+  const [isDarkMode, setIsDarkMode] = useState(() => {
     return localStorage.getItem("theme") === "dark";
   });
   const [language] = useState(() => {
     return localStorage.getItem("language") || "en";
   });
 
+  // Function to toggle dark mode
+  const toggleDarkMode = () => {
+    setIsDarkMode((prevMode) => {
+      const newMode = !prevMode;
+      localStorage.setItem("theme", newMode ? "dark" : "light");
+      document.documentElement.classList.toggle("dark", newMode);
+      return newMode;
+    });
+  };
+
+  console.log(toggleDarkMode);
   useEffect(() => {
     if (isDarkMode) {
       document.documentElement.classList.add("dark");
-      localStorage.setItem("theme", "dark");
     } else {
       document.documentElement.classList.remove("dark");
-      localStorage.setItem("theme", "light");
     }
   }, [isDarkMode]);
 
@@ -28,12 +37,9 @@ const Navbar = () => {
     localStorage.setItem("language", language);
   }, [language]);
 
-
-
   return (
     <nav className="bg-transparent px-6 lg:px-0">
       <div className="max-w-full mx-auto flex justify-around items-center">
-        {/* Dynamic logo based on theme */}
         <img
           src={isDarkMode ? String(LogoLight) : String(LogoLight)}
           alt="logo"
@@ -144,7 +150,7 @@ const Navbar = () => {
                 duration-300 group-hover:rotate-45"
                 />
               </Link>
-            </Button>
+          </Button>
           </div> */}
         </div>
       </div>
