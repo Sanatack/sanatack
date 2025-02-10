@@ -44,7 +44,8 @@ const Navbar = () => {
           src={isDarkMode ? String(LogoLight) : String(LogoLight)}
           alt="logo"
           width={180}
-        />
+        />  
+        <h1>WELLCOME</h1>
 
         <div className="hidden md:flex items-center space-x-5 space-x-reverse bg-[#0C0C0C] border border-[#222222] rounded-full h-14 pr-5 pl-2">
           {navItems.map((item, index) => (
