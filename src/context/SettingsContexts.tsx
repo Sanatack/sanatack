@@ -25,7 +25,7 @@ export const SettingsProvider = ({ children }: { children: ReactNode }) => {
 
   return (
     <SettingsContext.Provider value={{ darkMode, toggleDarkMode }}>
-      <div className={darkMode ? "dark" : ""}>{children}</div>
+      <div>{children}</div>
     </SettingsContext.Provider>
   );
 };
